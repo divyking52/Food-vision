@@ -3,3 +3,7 @@ openai
 openai-whisper
 streamlit
 pytube
+transformers
+GPT2LMHeadModel
+GPT2Tokenizer
+whisper

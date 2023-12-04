@@ -41,11 +41,7 @@ def save_audio(url):
     print(yt.title+ 'has been successfully downloaded')
     return yt.title, audio_filename, video_filename
 
-def audio_to_transcription(audio_filename):
-    model = load_model()
-    result= model.transcribe(audio_filename)
-    transcript = result['text']
-    return transcript
+
 
 def load_gpt2_model():
     model_name = "gpt2"
@@ -91,13 +87,9 @@ if url is not None:
                 st.info('Video uploaded successfully')
                 video_title, audio_filename, video_filename = save_audio(url)
                 st.video(video_filename)
-            with col2:
-                st.info('transcript is below')
-                print(audio_filename)
-                transcript_result = audio_to_transcription(audio_filename)
-                st.success(transcript_result)
+           
 
-            with col3:
+            with col2:
                 st.info("recipe is generated below")
                 recipe_result = generate_recipe_with_gpt2(video_title, gpt2_model, gpt2_tokenizer)
                 st.success(recipe_result)

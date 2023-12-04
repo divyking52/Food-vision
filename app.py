@@ -6,7 +6,7 @@ import os
 import whisper
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-ffmpeg_path = "C:\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\bin\ffmpeg.exe"
+ffmpeg_path = r"C:\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\bin\ffmpeg.exe"
 subprocess.run([ffmpeg_path, 'other', 'arguments'])
 
 def load_model():

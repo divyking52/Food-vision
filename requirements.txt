@@ -6,3 +6,4 @@ pytube
 transformers
 whisper
 torch
+ffmpeg

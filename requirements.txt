@@ -7,4 +7,4 @@ transformers
 whisper
 torch
 ffmpeg
-subprocess
+

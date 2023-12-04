@@ -1,9 +1,13 @@
 import streamlit as st
+import subprocess
 from pytube import YouTube
 from pathlib import Path
 import os
 import whisper
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+ffmpeg_path = "C:\ffmpeg-2023-11-22-git-0008e1c5d5-full_build\bin"
+subprocess.run([ffmpeg_path, 'other', 'arguments'])
 
 def load_model():
     model = whisper.load_model("base")
@@ -99,6 +103,9 @@ if url is not None:
                 st.info("recipe is generated below")
                 recipe_result = generate_recipe_with_gpt2(video_title, gpt2_model, gpt2_tokenizer)
                 st.success(recipe_result)
+
+
+
 
     # st.subheader("Transcript")
     # st.success(transcript)

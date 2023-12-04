@@ -41,9 +41,9 @@ def save_audio(url):
     print(yt.title+ 'has been successfully downloaded')
     return yt.title, audio_filename, video_filename
 
-def audio_to_transcription(audio_file):
+def audio_to_transcription(audio_filename):
     model = load_model()
-    result= model.transcribe(audio_file)
+    result= model.transcribe(audio_filename)
     transcript = result['text']
     return transcript
 

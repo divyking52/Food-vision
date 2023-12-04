@@ -5,3 +5,4 @@ streamlit
 pytube
 transformers
 whisper
+torch

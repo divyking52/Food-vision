@@ -51,7 +51,7 @@ def load_gpt2_model():
 
 
 def generate_recipe_with_gpt2(prompt, model, tokenizer):
-    prompt= "write the food recipe from the below text:\n"+ prompt
+    prompt= "write the step by step detailed food recipe from the below text:\n"+ prompt
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     output = model.generate(input_ids, max_length=200,
                             num_return_sequences=1,

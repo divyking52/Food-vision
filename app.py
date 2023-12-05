@@ -56,7 +56,9 @@ def generate_recipe_with_gpt2(prompt, model, tokenizer):
     output = model.generate(input_ids, max_length=2000,
                             num_return_sequences=1,
                             no_repeat_ngram_size=2,
-                            pad_token_id=tokenizer.eos_token_id)
+                            pad_token_id=tokenizer.eos_token_id,
+                           temperature=0.8,  # Experiment with temperature (e.g., 0.2 to 0.8)
+                            top_k=50)
 
     recipe = tokenizer.decode(output[0], skip_special_tokens=True)
     return recipe
